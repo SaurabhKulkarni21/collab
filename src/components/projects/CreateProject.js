@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { createProject } from '../../store/actions/projectActions'
 
 class CreateProject extends Component {
 
   state = {
     title: '',
     content: '',
-    gitLink: ''
+    gitlink: ''
   }
   handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(this.state)
+    e.preventDefault();
+    this.props.createProject(this.state)
     
   }
 
@@ -38,7 +40,7 @@ class CreateProject extends Component {
 
             <div className="input-field">
                 <label htmlFor="gitlink">Github Link</label>
-                <input type="text" id="gitLink" onChange={this.handleChange}/>
+                <input type="text" id="gitlink" onChange={this.handleChange}/>
             </div>
 
             <div className="input-field">
@@ -53,4 +55,10 @@ class CreateProject extends Component {
   }
 }
 
-export default CreateProject
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createProject: (project) => dispatch(createProject(project))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(CreateProject)
