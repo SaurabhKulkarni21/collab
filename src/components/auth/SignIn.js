@@ -62,6 +62,7 @@ const mapStateToProps = (state) => {
     auth: state.firebase.auth
   }
 }
+
 const  mapDispatchToProps = (dispatch) => {
   return {
     signIn: (creds) => dispatch(signIn(creds))
