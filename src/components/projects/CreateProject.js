@@ -2,39 +2,19 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createProject } from '../../store/actions/projectActions'
 import { Redirect } from 'react-router-dom'
-import makeAnimated from 'react-select/lib/animated';
-import Select from 'react-select'
 
-
-
-const optionsSelect = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' }
-]
-
-const customStyles = {
-  input: styles => {
-    return {
-      ...styles,
-      height: '2.5em'
-
-  };
-}
-}
 
 
 class CreateProject extends Component {
   state = {
     title: '',
     content: '',
-    gitlink: '',
-    collaborators: []
+    gitlink: ''
   }
 
   
-  
   handleSubmit = (e) => {
+    console.log("This is e", e)
     e.preventDefault();
     this.props.createProject(this.state)
     this.props.history.push('/')
@@ -42,14 +22,8 @@ class CreateProject extends Component {
 
   handleChange = (e) => {
     this.setState({
-      ...this.state,
-      collaborators: [e]
+        [e.target.id]: e.target.value
     })
-
-    console.log(this.state)
-    // this.setState({
-    //     [e.target.id]: e.target.value
-    // })
   }
 
   render() {
@@ -77,17 +51,6 @@ class CreateProject extends Component {
                 <input type="text" id="gitlink" onChange={this.handleChange}/>
             </div>
 
-            <div className="input-field">
-            <label htmlFor="collaborators">Github Link</label>
-            <Select isMulti 
-                    components={makeAnimated()}
-                    options={optionsSelect}
-                    closeMenuOnSelect={false}
-                    styles={customStyles}
-                    placeholder='Select collaborators for this project'  
-                    onChange={this.handleChange}
-            />
-            </div>
 
             <div className="input-field">
                 <button className="btn grey darken-2">Create Project</button>

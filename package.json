@@ -6,6 +6,7 @@
     "firebase": "^5.5.4",
     "materialize-social": "^1.0.3",
     "moment": "^2.22.2",
+    "multi-select-react": "^0.1.8",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",

@@ -1,4 +1,5 @@
 export const createProject = (project) => {
+    console.log("This is the project",project)
     return (dispatch, getState, { getFirestore, getFirebase }) => {
         // Make async calls to database
         const firestore = getFirestore();
@@ -13,6 +14,7 @@ export const createProject = (project) => {
         }).then(() => {
             dispatch({ type: 'CREATE_PROJECT', project });
         }).catch((err) => {
+            console.log("This is the error",err)
             dispatch({ type: 'CREATE_PROJECT_ERROR', project });
         })
         
