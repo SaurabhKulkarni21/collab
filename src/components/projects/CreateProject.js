@@ -27,7 +27,7 @@ class CreateProject extends Component {
     title: '',
     content: '',
     gitlink: '',
-    selectedOption: null
+    collaborators: null
   }
 
   
@@ -35,12 +35,13 @@ class CreateProject extends Component {
     console.log("This is e", e)
     e.preventDefault();
     this.props.createProject(this.state)
+    console.log("This is state",this.state)
     this.props.history.push('/')
   }
   handleChangeSelect = (selectedOption) => {
     this.setState({
       ...this.state,
-      selectedOption: selectedOption
+      collaborators: selectedOption
     })
 
     for(var i=0; i< selectedOption.length;i++){
@@ -63,7 +64,7 @@ class CreateProject extends Component {
       options.push({'value':`${item.firstName} ${item.lastName}`, 'label':`${item.firstName} ${item.lastName}`})
       console.log("This are the optons", options);
     })} 
-    const { selectedOption } = this.state;
+    const { collaborators } = this.state;
     if(!auth.uid) return <Redirect to ='/signin' />
     return (
       <div className = "container" style={{height:'992px'}}>
@@ -92,7 +93,7 @@ class CreateProject extends Component {
                   <span> 
                       <Select
                         styles = {customStyles}
-                        value={selectedOption}
+                        value={collaborators}
                         onChange={this.handleChangeSelect}
                         options={options}
                         isMulti='true'

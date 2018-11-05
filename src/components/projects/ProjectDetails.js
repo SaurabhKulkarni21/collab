@@ -10,7 +10,7 @@ const ProjectDetails = (props) => {
   if(!auth.uid) return <Redirect to ='/' />
   if(project){
       return(
-        <div className="container section project-details">
+        <div className="container section project-details" style={{height:'992px'}}>
             <div className="card">
                 <div className="card-content">
                     <span className="card-title">{ project.title }</span>
