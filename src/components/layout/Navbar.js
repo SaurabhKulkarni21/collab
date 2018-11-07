@@ -9,8 +9,11 @@ const Navbar = (props) => {
     console.log(profile);
     const links = auth.uid ? <SignedInLinks profile= {profile}/> : <SignedOutLinks />
     return (
-        <nav className="nav-wrapper teal">
-            <div className="container">
+        <nav className="nav-wrapper teal" >
+            <div className="container" style={{width:'80%'}}>
+                <Link to= '/'>
+                    <img src={require("../../images/logo-collab2.png")} alt="Logo"/>
+                </Link>
                 <Link to = '/' className="brand-logo" styles={{paddingRight:'30px'}}>C O L L A B</Link>
                 { links }
             </div>

@@ -18,15 +18,6 @@ class SignIn extends Component {
     
   }
 
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({ 
-        ...this.state,
-        show: true 
-      });
-    }, 2000);
-  }
-
   handleChange = (e) => {
     this.setState({
         [e.target.id]: e.target.value

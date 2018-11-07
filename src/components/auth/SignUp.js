@@ -27,7 +27,7 @@ class SignUp extends Component {
     lastName: '',
     email: '',
     password: ''
-
+    
   }
   handleSubmit = (e) => {
     e.preventDefault()
@@ -49,7 +49,7 @@ class SignUp extends Component {
             <Random
                 text="COLLAB"
                 effect="verticalFadeIn"
-                effectDuration='0.8'
+                effectDuration={0.8}
                 iterations={1}
                 effectDirection="up"
                 effectChange={2.0}
@@ -60,7 +60,7 @@ class SignUp extends Component {
             <Random
                 text="One place to collaborate on your projects."
                 effect="verticalFadeIn"
-                effectDuration='0.8'
+                effectDuration={0.8}
                 iterations={1}
                 effectDirection="up"
                 effectChange={2.0}
@@ -68,7 +68,7 @@ class SignUp extends Component {
         </div>
 
 
-        <div className="card" style= {{marginTop:'20px', width:'45%', marginLeft:'26%'}}>
+        <div className="card" style= {{marginTop:'20px', width:'45%',marginLeft:'26%'}}>
             <div className="card-content">
             <form className="white" onSubmit= {this.handleSubmit}>
             <h5 className ="grey-text text-darken-3">Sign Up</h5>
