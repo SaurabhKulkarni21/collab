@@ -12,16 +12,16 @@ class Dashboard extends Component {
         const { projects , auth, notifications } = this.props;
         if (!auth.uid) return <Redirect to= '/signin' />
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="col s12 m6">
+            
+                <div className = "row">
+                    <div className = "col col-projects" style={{width:"60%", marginRight:"10%", marginLeft:"3%"}}>
                         <ProjectList projects = {projects}/>
                     </div>
-                    <div className="col s12 m5 offset-m1">
+
+                    <div className= "col col-notifications">
                         <Notifications notifications= {notifications}/>
                     </div>
                 </div>
-            </div>
         )
 
 
