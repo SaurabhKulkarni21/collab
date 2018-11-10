@@ -13,14 +13,14 @@ const drawDivs = (projects) => {
    {
         divList.push(
         <div className = "row">
-            <div className = "col" style= {{width:"50%"}}>
-                <Link to ={'/projects/' + projects && projects[pivot].id}  key={ projects && projects[pivot].id }>
+            <div className = "col" style= {{width:"50%"}} id={projects && projects[pivot].id}>
+                <Link to ={'/projects/'+projects[pivot].id}  key={projects[pivot].id }>
                 <ProjectSummary project={projects && projects[pivot]}/>
                 </Link>
             </div>
 
-            <div className= "col" style= {{width:"50%"}}>
-                <Link to ={'/projects/' + projects && projects[pivot+1].id}  key={ projects && projects[pivot+1].id }>
+            <div className= "col" style= {{width:"50%"}} id={projects && projects[pivot+1].id}>
+                <Link to ={'/projects/'+projects[pivot+1].id}  key={projects[pivot+1].id }>
                 <ProjectSummary project={projects && projects[pivot+1]}/>
                 </Link>
             </div>
