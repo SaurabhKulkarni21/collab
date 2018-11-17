@@ -32,7 +32,17 @@ const ProjectDetails = (props) => {
                 </div>
                 <div className="card-action grey lighten-4 grey-text">
                     <div>Posted By {project.authorFirstName} {project.authorLastName}</div>
-                    <div><p className = 'grey-text'>{moment(project.createdAt.toDate()).calendar()}</p></div>
+                    <div className="row">
+                        <span className="col" style={{paddingLeft:"0px"}}>
+                            <p className = 'grey-text'>{moment(project.createdAt.toDate()).calendar()}</p>
+                        </span>
+
+                        <span className="col" style={{float:"right"}}>
+                            <button className="btn">View commits</button>
+                        </span>
+
+                    </div>
+                                                 
                 </div>
             </div>
         </div>

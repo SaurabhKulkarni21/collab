@@ -12,15 +12,15 @@ const stylesHr = {
 const Footer = () => {
     return (
         
-        
-                
-                <div className="row">
-                <hr style={stylesHr}/>
-                    <div className="col" style={{marginLeft:'47%', marginTop:'7px'}}>
+            <footer className="page-footer white">  
+                <hr style={stylesHr}/>  
+                <div className="col" style={{marginLeft:'47%', marginTop:'7px'}}>
                         <SocialIcon style={{ height: 35, width: 35 }} url="https://github.com/SaurabhKulkarni21/collab" />
                         <SocialIcon style={{ height: 35, width: 35, marginLeft:'12px' }} url="https://linkedin.com" />     
-                    </div>
                 </div>
+            </footer>
+                
+               
                 
         
         
@@ -30,3 +30,4 @@ const Footer = () => {
 }
 
 export default Footer
+
