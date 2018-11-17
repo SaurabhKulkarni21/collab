@@ -6,9 +6,6 @@ import Select from 'react-select'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux';
 
-let optionsSelect = [
-  
-];
 
 const customStyles = {
   container: (base) => ({
@@ -62,7 +59,6 @@ class CreateProject extends Component {
     let options = []
     {users && users.map(item => {
       options.push({'value':`${item.firstName} ${item.lastName}`, 'label':`${item.firstName} ${item.lastName}`})
-      console.log("This are the optons", options);
     })} 
     const { collaborators } = this.state;
     if(!auth.uid) return <Redirect to ='/signin' />

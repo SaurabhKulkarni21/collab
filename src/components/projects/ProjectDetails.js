@@ -14,9 +14,21 @@ const ProjectDetails = (props) => {
         <div className="container section project-details" style={{height:'992px'}}>
             <div className="card">
                 <div className="card-content">
-                    <span className="card-title">{ project.title }</span>
-                    <p>{ project.content }</p>
-                    <p>{ project.gitlink }</p>
+                    <span className="card-title">
+                        <p className = "labels" style={{opacity:"0.45"}}>Title</p>
+                        { project.title }
+                    </span>
+
+                    <span className ="card-title">
+                        <p className = "labels" style={{opacity:"0.45"}}>Content</p>
+                        <p style={{fontSize:"18px"}}>{ project.content }</p>
+                    </span>
+                
+                    <span className ="card-title">
+                        <p className = "labels" style={{opacity:"0.45"}}>Github Link</p>
+                        <p><a href={"https://"+project.gitlink} style={{color:"teal"}}>{ project.gitlink }</a></p>
+                    </span>
+                    
                 </div>
                 <div className="card-action grey lighten-4 grey-text">
                     <div>Posted By {project.authorFirstName} {project.authorLastName}</div>
