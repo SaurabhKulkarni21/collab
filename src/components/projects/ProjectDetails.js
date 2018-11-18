@@ -4,6 +4,7 @@ import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import { Redirect } from 'react-router-dom'
 import moment from 'moment'
+import ViewCommit from './ViewCommit';
 
 const ProjectDetails = (props) => {
   console.log(props);
@@ -13,6 +14,7 @@ const ProjectDetails = (props) => {
       return(
         <div className="container section project-details" style={{height:'992px'}}>
             <div className="card">
+                {/* Div for card content */}
                 <div className="card-content">
                     <span className="card-title">
                         <p className = "labels" style={{opacity:"0.45"}}>Title</p>
@@ -28,23 +30,21 @@ const ProjectDetails = (props) => {
                         <p className = "labels" style={{opacity:"0.45"}}>Github Link</p>
                         <p><a href={"https://"+project.gitlink} style={{color:"teal"}}>{ project.gitlink }</a></p>
                     </span>
-                    
                 </div>
+                {/* Div for footer or actions of the card  */}
                 <div className="card-action grey lighten-4 grey-text">
                     <div>Posted By {project.authorFirstName} {project.authorLastName}</div>
                     <div className="row">
                         <span className="col" style={{paddingLeft:"0px"}}>
                             <p className = 'grey-text'>{moment(project.createdAt.toDate()).calendar()}</p>
                         </span>
-
-                        <span className="col" style={{float:"right"}}>
-                            <button className="btn">View commits</button>
-                        </span>
-
                     </div>
-                                                 
                 </div>
             </div>
+
+            {/* View commits component */}
+            <ViewCommit />
+            
         </div>
       )
   }
